@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="overflow-x-hidden">
 
 <head>
   <meta charset="UTF-8" />
@@ -34,6 +34,7 @@
       --navy-500: #2563eb;
     }
 
+    html, body { overflow-x: hidden; }
     html {
       scroll-behavior: smooth;
     }
@@ -153,24 +154,30 @@
 
     @media (max-width: 768px) {
       .hero-gradient {
-        background: linear-gradient(135deg, rgba(10, 22, 40, .98) 0%, rgba(10, 22, 40, .85) 100%);
+        background: linear-gradient(135deg, rgba(10, 22, 40, .95) 0%, rgba(10, 22, 40, .8) 40%, rgba(15, 29, 53, .6) 100%);
+      }
+
+      #mobileMenu:not(.hidden) {
+        max-height: calc(100vh - 4rem);
+        overflow-y: auto;
       }
     }
   </style>
 </head>
 
-<body class="bg-navy-900 text-white">
+<body class="bg-navy-900 text-white overflow-x-hidden">
 
   <!-- ==================== NAVBAR ==================== -->
-  <nav id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
-      <div class="flex items-center justify-between h-16 lg:h-20">
-        <a href="#" class="flex items-center gap-3">
-          <img src="assets/img/prim.png" alt="Primavera MAF" class="h-10 w-auto brightness-0 invert" />
-          <span class="text-lg font-bold text-white tracking-tight">Primavera <span
+  <nav id="navbar" class="fixed top-0 w-screen z-40 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-12 lg:px-20">
+      <div class="flex items-center h-16 lg:h-20">
+        <a href="#" class="flex items-center gap-2 sm:gap-3 min-w-0">
+          <img src="assets/img/prim.png" alt="Primavera MAF"
+            class="h-6 sm:h-10 w-auto max-w-20 sm:max-w-none brightness-0 invert" />
+          <span class="text-[13px] sm:text-lg font-bold text-white tracking-tight whitespace-nowrap">Primavera <span
               class="text-blue-400">MAF</span></span>
         </a>
-        <div class="hidden md:flex items-center gap-8">
+        <div class="hidden md:flex items-center gap-4 xl:gap-8 ml-auto">
           <a href="#inicio" class="nav-link text-sm font-medium text-gray-300 hover:text-blue-400 transition">Inicio</a>
           <a href="#acerca"
             class="nav-link text-sm font-medium text-gray-300 hover:text-blue-400 transition">Nosotros</a>
@@ -178,25 +185,27 @@
             class="nav-link text-sm font-medium text-gray-300 hover:text-blue-400 transition">Productos</a>
           <a href="#materias" class="nav-link text-sm font-medium text-gray-300 hover:text-blue-400 transition">Materias
             Primas</a>
-          <a href="#testimonios" class="nav-link text-sm font-medium text-gray-300 hover:text-blue-400 transition">Testimonios</a>
+          <a href="#testimonios"
+            class="nav-link text-sm font-medium text-gray-300 hover:text-blue-400 transition">Testimonios</a>
           <a href="#faq" class="nav-link text-sm font-medium text-gray-300 hover:text-blue-400 transition">FAQ</a>
           <a href="#contacto"
             class="nav-link text-sm font-medium text-gray-300 hover:text-blue-400 transition">Contacto</a>
         </div>
-        <button id="menuBtn" class="md:hidden p-2 text-gray-400 hover:text-white transition">
-          <i class="fas fa-bars text-xl"></i>
+        <button id="menuBtn" class="md:hidden p-1.5 sm:p-2 text-gray-400 hover:text-white transition shrink-0 ml-auto">
+          <i class="fas fa-bars text-lg sm:text-xl"></i>
         </button>
       </div>
     </div>
     <div id="mobileMenu" class="md:hidden hidden glass border-t border-white/5">
-      <div class="px-4 py-4 space-y-3">
+      <div class="px-4 py-3 space-y-1">
         <a href="#inicio" class="block text-sm font-medium text-gray-300 hover:text-blue-400 transition">Inicio</a>
         <a href="#acerca" class="block text-sm font-medium text-gray-300 hover:text-blue-400 transition">Nosotros</a>
         <a href="#productos"
           class="block text-sm font-medium text-gray-300 hover:text-blue-400 transition">Productos</a>
         <a href="#materias" class="block text-sm font-medium text-gray-300 hover:text-blue-400 transition">Materias
           Primas</a>
-        <a href="#testimonios" class="block text-sm font-medium text-gray-300 hover:text-blue-400 transition">Testimonios</a>
+        <a href="#testimonios"
+          class="block text-sm font-medium text-gray-300 hover:text-blue-400 transition">Testimonios</a>
         <a href="#faq" class="block text-sm font-medium text-gray-300 hover:text-blue-400 transition">FAQ</a>
         <a href="#contacto" class="block text-sm font-medium text-gray-300 hover:text-blue-400 transition">Contacto</a>
       </div>
@@ -730,13 +739,15 @@
     <div class="absolute inset-0 bg-gradient-to-b from-navy-900 via-navy-800/30 to-navy-900 pointer-events-none"></div>
     <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 relative">
       <div class="text-center max-w-2xl mx-auto" data-aos="fade-up">
-        <span class="text-blue-400 font-semibold text-sm tracking-[.2em] uppercase flex items-center justify-center gap-2">
+        <span
+          class="text-blue-400 font-semibold text-sm tracking-[.2em] uppercase flex items-center justify-center gap-2">
           <i class="fas fa-star"></i>Testimonios
         </span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-4 tracking-tight">
           Lo que dicen nuestros <span class="gradient-text">clientes</span>
         </h2>
-        <p class="mt-4 text-gray-500">La satisfacción de quienes confían en nosotros es nuestra mejor carta de presentación.</p>
+        <p class="mt-4 text-gray-500">La satisfacción de quienes confían en nosotros es nuestra mejor carta de
+          presentación.</p>
       </div>
       <div class="mt-14 grid md:grid-cols-2 gap-6">
         <!-- Testimonio 1 -->
@@ -749,10 +760,12 @@
             <i class="fas fa-star" style="color:#f59e0b"></i>
           </div>
           <p class="text-gray-400 leading-relaxed text-sm italic">
-            "Desde que tomo el Colágeno Vera mis articulaciones dejaron de dolerme. La calidad es excelente y se nota que son productos hechos con responsabilidad."
+            "Desde que tomo el Colágeno Vera mis articulaciones dejaron de dolerme. La calidad es excelente y se nota
+            que son productos hechos con responsabilidad."
           </p>
           <div class="mt-5 flex items-center gap-4">
-            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shrink-0">
+            <div
+              class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shrink-0">
               MC
             </div>
             <div>
@@ -771,10 +784,12 @@
             <i class="fas fa-star" style="color:#f59e0b"></i>
           </div>
           <p class="text-gray-400 leading-relaxed text-sm italic">
-            "Recomiendo totalmente el Magnesio Vera. Me ayudó a regular mi sueño y bajó mis niveles de estrés. Además el precio es justo para la calidad que ofrecen."
+            "Recomiendo totalmente el Magnesio Vera. Me ayudó a regular mi sueño y bajó mis niveles de estrés. Además el
+            precio es justo para la calidad que ofrecen."
           </p>
           <div class="mt-5 flex items-center gap-4">
-            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shrink-0">
+            <div
+              class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shrink-0">
               JL
             </div>
             <div>
@@ -793,10 +808,12 @@
             <i class="fas fa-star" style="color:#f59e0b"></i>
           </div>
           <p class="text-gray-400 leading-relaxed text-sm italic">
-            "El Acitron-D fue un aliado fundamental para subir mis defensas. Llevo 6 meses tomándolo y los resultados han sido increíbles. Gracias Primavera MAF."
+            "El Acitron-D fue un aliado fundamental para subir mis defensas. Llevo 6 meses tomándolo y los resultados
+            han sido increíbles. Gracias Primavera MAF."
           </p>
           <div class="mt-5 flex items-center gap-4">
-            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shrink-0">
+            <div
+              class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shrink-0">
               AP
             </div>
             <div>
@@ -815,10 +832,12 @@
             <i class="fas fa-star" style="color:#f59e0b"></i>
           </div>
           <p class="text-gray-400 leading-relaxed text-sm italic">
-            "Compramos la Lecitina de Soya para mi papá y ha mejorado notablemente su circulación. El envío fue rápido y la atención excelente. 100% recomendados."
+            "Compramos la Lecitina de Soya para mi papá y ha mejorado notablemente su circulación. El envío fue rápido y
+            la atención excelente. 100% recomendados."
           </p>
           <div class="mt-5 flex items-center gap-4">
-            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shrink-0">
+            <div
+              class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shrink-0">
               CR
             </div>
             <div>
@@ -836,33 +855,40 @@
     <div class="absolute inset-0 bg-gradient-to-r from-navy-800 to-navy-700/30 pointer-events-none"></div>
     <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 relative">
       <div class="text-center max-w-2xl mx-auto" data-aos="fade-up">
-        <span class="text-blue-400 font-semibold text-sm tracking-[.2em] uppercase flex items-center justify-center gap-2">
+        <span
+          class="text-blue-400 font-semibold text-sm tracking-[.2em] uppercase flex items-center justify-center gap-2">
           <i class="fas fa-truck"></i>Envíos y Cobertura
         </span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-4 tracking-tight">
           Recibe tu pedido <span class="gradient-text">donde estés</span>
         </h2>
-        <p class="mt-4 text-gray-500">Hacemos entregas en todo el estado Aragua y realizamos envíos a escala nacional.</p>
+        <p class="mt-4 text-gray-500">Hacemos entregas en todo el estado Aragua y realizamos envíos a escala nacional.
+        </p>
       </div>
       <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="glass-card rounded-2xl p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="0">
-          <div class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 flex items-center justify-center text-blue-400 text-xl border border-blue-500/10">
+          <div
+            class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 flex items-center justify-center text-blue-400 text-xl border border-blue-500/10">
             <i class="fas fa-city"></i>
           </div>
           <h3 class="mt-4 font-bold text-white text-sm">Municipio</h3>
-          <p class="mt-2 text-gray-400 text-xs leading-relaxed">Entrega puerta a puerta en Maracay y municipios cercanos</p>
+          <p class="mt-2 text-gray-400 text-xs leading-relaxed">Entrega puerta a puerta en Maracay y municipios cercanos
+          </p>
           <p class="mt-2 text-blue-400 text-xs font-semibold">24 — 48 hrs</p>
         </div>
         <div class="glass-card rounded-2xl p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="100">
-          <div class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 flex items-center justify-center text-blue-400 text-xl border border-blue-500/10">
+          <div
+            class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 flex items-center justify-center text-blue-400 text-xl border border-blue-500/10">
             <i class="fas fa-map-marked-alt"></i>
           </div>
           <h3 class="mt-4 font-bold text-white text-sm">Estado Aragua</h3>
-          <p class="mt-2 text-gray-400 text-xs leading-relaxed">Cobertura completa en todo el estado con delivery directo</p>
+          <p class="mt-2 text-gray-400 text-xs leading-relaxed">Cobertura completa en todo el estado con delivery
+            directo</p>
           <p class="mt-2 text-blue-400 text-xs font-semibold">48 — 72 hrs</p>
         </div>
         <div class="glass-card rounded-2xl p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="200">
-          <div class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 flex items-center justify-center text-blue-400 text-xl border border-blue-500/10">
+          <div
+            class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 flex items-center justify-center text-blue-400 text-xl border border-blue-500/10">
             <i class="fas fa-flag-venezuela"></i>
           </div>
           <h3 class="mt-4 font-bold text-white text-sm">Nacional</h3>
@@ -870,12 +896,15 @@
           <p class="mt-2 text-blue-400 text-xs font-semibold">3 — 7 días hábiles</p>
         </div>
         <div class="glass-card rounded-2xl p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="300">
-          <div class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 flex items-center justify-center text-blue-400 text-xl border border-blue-500/10">
+          <div
+            class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 flex items-center justify-center text-blue-400 text-xl border border-blue-500/10">
             <i class="fas fa-shopping-cart"></i>
           </div>
           <h3 class="mt-4 font-bold text-white text-sm">Pedido Mínimo</h3>
-          <p class="mt-2 text-gray-400 text-xs leading-relaxed">Consulta nuestro pedido mínimo y formas de pago vía WhatsApp</p>
-          <a href="https://wa.me/582432860708" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-blue-400 hover:text-blue-300 text-xs font-semibold transition">
+          <p class="mt-2 text-gray-400 text-xs leading-relaxed">Consulta nuestro pedido mínimo y formas de pago vía
+            WhatsApp</p>
+          <a href="https://wa.me/582432860708" target="_blank" rel="noopener noreferrer"
+            class="mt-3 inline-flex items-center gap-1.5 text-blue-400 hover:text-blue-300 text-xs font-semibold transition">
             <i class="fab fa-whatsapp"></i> Preguntar ahora
           </a>
         </div>
@@ -888,7 +917,8 @@
     <div class="absolute inset-0 bg-gradient-to-b from-navy-900 via-navy-800/30 to-navy-900 pointer-events-none"></div>
     <div class="max-w-4xl mx-auto px-8 sm:px-12 lg:px-20 relative">
       <div class="text-center max-w-2xl mx-auto" data-aos="fade-up">
-        <span class="text-blue-400 font-semibold text-sm tracking-[.2em] uppercase flex items-center justify-center gap-2">
+        <span
+          class="text-blue-400 font-semibold text-sm tracking-[.2em] uppercase flex items-center justify-center gap-2">
           <i class="fas fa-circle-question"></i>FAQ
         </span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-4 tracking-tight">
@@ -899,85 +929,102 @@
       <div class="mt-14 space-y-3" data-aos="fade-up">
         <!-- FAQ 1 -->
         <div class="faq-item glass-card rounded-2xl overflow-hidden">
-          <button class="faq-question w-full flex items-center justify-between p-6 text-left transition hover:bg-white/5">
+          <button
+            class="faq-question w-full flex items-center justify-between p-6 text-left transition hover:bg-white/5">
             <span class="text-white font-semibold text-sm pr-4">¿Cómo puedo comprar sus productos?</span>
             <i class="fas fa-chevron-down text-blue-400 transition-transform duration-300 shrink-0"></i>
           </button>
           <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
-              Puedes contactarnos directamente por WhatsApp al <a href="https://wa.me/582432860708" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition">+58 243 2860708</a>, por teléfono o llenando el formulario de contacto en esta página. Te atenderemos personalmente para tomar tu pedido.
+              Puedes contactarnos directamente por WhatsApp al <a href="https://wa.me/582432860708" target="_blank"
+                rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition">+58 243 2860708</a>, por
+              teléfono o llenando el formulario de contacto en esta página. Te atenderemos personalmente para tomar tu
+              pedido.
             </div>
           </div>
         </div>
         <!-- FAQ 2 -->
         <div class="faq-item glass-card rounded-2xl overflow-hidden">
-          <button class="faq-question w-full flex items-center justify-between p-6 text-left transition hover:bg-white/5">
+          <button
+            class="faq-question w-full flex items-center justify-between p-6 text-left transition hover:bg-white/5">
             <span class="text-white font-semibold text-sm pr-4">¿Tienen registro sanitario?</span>
             <i class="fas fa-chevron-down text-blue-400 transition-transform duration-300 shrink-0"></i>
           </button>
           <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
-              Sí, todos nuestros productos cuentan con los registros sanitarios correspondientes ante las autoridades competentes. Laboratorio Primavera MAF C.A. cumple con las normas sanitarias venezolanas.
+              Sí, todos nuestros productos cuentan con los registros sanitarios correspondientes ante las autoridades
+              competentes. Laboratorio Primavera MAF C.A. cumple con las normas sanitarias venezolanas.
             </div>
           </div>
         </div>
         <!-- FAQ 3 -->
         <div class="faq-item glass-card rounded-2xl overflow-hidden">
-          <button class="faq-question w-full flex items-center justify-between p-6 text-left transition hover:bg-white/5">
+          <button
+            class="faq-question w-full flex items-center justify-between p-6 text-left transition hover:bg-white/5">
             <span class="text-white font-semibold text-sm pr-4">¿Hacen envíos a todo el país?</span>
             <i class="fas fa-chevron-down text-blue-400 transition-transform duration-300 shrink-0"></i>
           </button>
           <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
-              Sí, realizamos envíos a todo el territorio nacional a través de empresas de encomiendas de confianza. Los tiempos de entrega varían según la zona de destino.
+              Sí, realizamos envíos a todo el territorio nacional a través de empresas de encomiendas de confianza. Los
+              tiempos de entrega varían según la zona de destino.
             </div>
           </div>
         </div>
         <!-- FAQ 4 -->
         <div class="faq-item glass-card rounded-2xl overflow-hidden">
-          <button class="faq-question w-full flex items-center justify-between p-6 text-left transition hover:bg-white/5">
+          <button
+            class="faq-question w-full flex items-center justify-between p-6 text-left transition hover:bg-white/5">
             <span class="text-white font-semibold text-sm pr-4">¿Cuál es el pedido mínimo?</span>
             <i class="fas fa-chevron-down text-blue-400 transition-transform duration-300 shrink-0"></i>
           </button>
           <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
-              El pedido mínimo varía según la zona de entrega. Escríbenos por WhatsApp y te informaremos el monto mínimo para tu ubicación.
+              El pedido mínimo varía según la zona de entrega. Escríbenos por WhatsApp y te informaremos el monto mínimo
+              para tu ubicación.
             </div>
           </div>
         </div>
         <!-- FAQ 5 -->
         <div class="faq-item glass-card rounded-2xl overflow-hidden">
-          <button class="faq-question w-full flex items-center justify-between p-6 text-left transition hover:bg-white/5">
+          <button
+            class="faq-question w-full flex items-center justify-between p-6 text-left transition hover:bg-white/5">
             <span class="text-white font-semibold text-sm pr-4">¿Qué métodos de pago aceptan?</span>
             <i class="fas fa-chevron-down text-blue-400 transition-transform duration-300 shrink-0"></i>
           </button>
           <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
-              Aceptamos transferencias bancarias, pago móvil y depósitos en efectivo. Consulta por nuestros canales de pago disponibles según tu ubicación.
+              Aceptamos transferencias bancarias, pago móvil y depósitos en efectivo. Consulta por nuestros canales de
+              pago disponibles según tu ubicación.
             </div>
           </div>
         </div>
         <!-- FAQ 6 -->
         <div class="faq-item glass-card rounded-2xl overflow-hidden">
-          <button class="faq-question w-full flex items-center justify-between p-6 text-left transition hover:bg-white/5">
+          <button
+            class="faq-question w-full flex items-center justify-between p-6 text-left transition hover:bg-white/5">
             <span class="text-white font-semibold text-sm pr-4">¿Los productos tienen efectos secundarios?</span>
             <i class="fas fa-chevron-down text-blue-400 transition-transform duration-300 shrink-0"></i>
           </button>
           <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
-              Nuestros productos son naturales y elaborados bajo estrictos controles de calidad. Sin embargo, recomendamos consultar con un especialista antes de comenzar cualquier tratamiento, especialmente si estás embarazada, lactando o bajo tratamiento médico.
+              Nuestros productos son naturales y elaborados bajo estrictos controles de calidad. Sin embargo,
+              recomendamos consultar con un especialista antes de comenzar cualquier tratamiento, especialmente si estás
+              embarazada, lactando o bajo tratamiento médico.
             </div>
           </div>
         </div>
         <!-- FAQ 7 -->
         <div class="faq-item glass-card rounded-2xl overflow-hidden">
-          <button class="faq-question w-full flex items-center justify-between p-6 text-left transition hover:bg-white/5">
+          <button
+            class="faq-question w-full flex items-center justify-between p-6 text-left transition hover:bg-white/5">
             <span class="text-white font-semibold text-sm pr-4">¿Venden al mayor?</span>
             <i class="fas fa-chevron-down text-blue-400 transition-transform duration-300 shrink-0"></i>
           </button>
           <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
-              Sí, vendemos tanto al detal como al mayor. Si eres distribuidor, farmacia o tienda naturista, contáctanos para conocer nuestros precios especiales por volumen.
+              Sí, vendemos tanto al detal como al mayor. Si eres distribuidor, farmacia o tienda naturista, contáctanos
+              para conocer nuestros precios especiales por volumen.
             </div>
           </div>
         </div>
@@ -1043,7 +1090,8 @@
                 <div class="flex items-start gap-4">
                   <div
                     class="w-11 h-11 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0 border border-blue-500/10">
-                    <i class="fas fa-phone"></i></div>
+                    <i class="fas fa-phone"></i>
+                  </div>
                   <div>
                     <p class="font-medium text-white text-sm">Teléfono</p>
                     <a href="tel:+582432860708" class="text-gray-400 hover:text-blue-400 transition text-sm">+58 243
@@ -1053,7 +1101,8 @@
                 <div class="flex items-start gap-4">
                   <div
                     class="w-11 h-11 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0 border border-blue-500/10">
-                    <i class="fas fa-envelope"></i></div>
+                    <i class="fas fa-envelope"></i>
+                  </div>
                   <div>
                     <p class="font-medium text-white text-sm">Correo Electrónico</p>
                     <a href="mailto:gerencia@primaveramaf.com"
@@ -1063,7 +1112,8 @@
                 <div class="flex items-start gap-4">
                   <div
                     class="w-11 h-11 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0 border border-blue-500/10">
-                    <i class="fas fa-clock"></i></div>
+                    <i class="fas fa-clock"></i>
+                  </div>
                   <div>
                     <p class="font-medium text-white text-sm">Horario</p>
                     <p class="text-gray-400 text-sm">Lunes a Viernes &middot; 8:00 am — 5:00 pm</p>
@@ -1072,7 +1122,8 @@
                 <div class="flex items-start gap-4">
                   <div
                     class="w-11 h-11 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0 border border-blue-500/10">
-                    <i class="fas fa-location-dot"></i></div>
+                    <i class="fas fa-location-dot"></i>
+                  </div>
                   <div>
                     <p class="font-medium text-white text-sm">Ubicación</p>
                     <p class="text-gray-400 text-sm">Maracay, Estado Aragua &middot; Venezuela</p>
